@@ -21,7 +21,7 @@ export class PipelineStack extends cdk.Stack {
           'hiro-world-3578/hiro-cicd-s3',
           'main',
           {
-            connectionArn: 'arn:aws:codeconnections:ap-northeast-1:327006267101:connection/dd590823-f374-4e6d-8bfb-ea405a663ec8'
+            connectionArn: 'arn:aws:codeconnections:ap-northeast-1:327006267101:connection/09287df6-a951-4987-806f-c26bbeda2a1d'
           }
         ),
 
