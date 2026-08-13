@@ -8,8 +8,8 @@ export class S3Stack extends cdk.Stack {
     super(scope, id, props);
 
     const bucket = new s3.Bucket(this, 'Bucket', {
-      bucketName: 'hiro-s3-test-20260813',
-      versioned: true
+      bucketName: 'hiro-s3-test-99999',
+      versioned: false
     });
 
     bucket.addToResourcePolicy(
