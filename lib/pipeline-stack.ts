@@ -13,6 +13,8 @@ export class PipelineStack extends cdk.Stack {
   constructor(scope: Construct, id: string, props?: cdk.StackProps) {
     super(scope, id, props);
 
+    const stageName = this.node.tryGetContext('stageName') ?? 'Dev';
+
     const pipeline = new CodePipeline(this, 'Pipeline', {
       pipelineName: 'hiro-cicd-s3-pipeline',
 
@@ -33,6 +35,11 @@ export class PipelineStack extends cdk.Stack {
       })
     });
 
-    pipeline.addStage(new AppStage(this, 'Prod'));
+    pipeline.addStage(
+      new AppStage(this, stageName, {
+        stageName: stageName
+      })
+    );
   }
 }
+
